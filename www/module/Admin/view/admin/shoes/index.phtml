@@ -1,0 +1,163 @@
+<div class="card my-4">
+	<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+		<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+			<h6 class="text-white text-capitalize ps-3">shoesTable</h6>
+		</div>
+	</div>
+	<div class="card-body px-0 pb-2">
+		<div class="table-responsive p-0">
+			<p class="text-secondary opacity-7">
+				<a href="<?= $this->url('shoes', ['action' => 'add']) ?>">Ajouter une nouvelle chaussure </a>
+			</p>
+			<table class="table align-items-center mb-0">
+				<thead>
+					<tr>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Taille</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Couleur</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Marque </th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+						<th class="text-secondary opacity-5">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					foreach ($shoess as $shoes) {
+
+					?>
+
+						<tr>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+
+										<img src="/img/<?=$shoes->img; ?>" class="text-xs font-weight-bold mb-0" style="width: 200px!important; height: 200px!important">
+
+									</div>
+							</td>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($shoes->shoesSize) ?>
+										</div>
+									</div>
+							</td>
+							<td>
+								<div class="d-flex px-2 py-1">
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($shoes->name_color) ?>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($shoes->name_mark) ?>
+										</div>
+									</div>
+							</td>
+
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($shoes->typeShoes) ?>
+										</div>
+									</div>
+							</td>
+
+
+
+
+							<td class="align-middle">
+								<a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+									<a href="<?= $this->url('shoes', ['action' => 'edit', 'id' => $shoes->id]) ?>">Edit</a>
+									<a href="<?= $this->url('shoes', ['action' => 'delete', 'id' => $shoes->id]) ?>">Delete</a>
+								</a>
+							</td>
+						</tr>
+					<?php
+					}
+					?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+/*
+
+$title = 'Mes accessoires ';
+$this->headTitle($title);
+?>
+<h1><!?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<!?= $this->url('shoes', ['action' => 'add']) ?>">Ajouter un nouvel accessoire </a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Image</th>
+        <th>Prix</th>
+        <th>Nom</th>
+        <th>Réferences</th>
+        <th>Couleur</th>
+        <th>Marque</th>
+        <th>Matière</th>
+        <th>Catégorie</th>
+        <th>Action</th>
+    </tr>
+
+    <?php foreach ($shoess as $shoes) : ?>
+        <tr>
+            <td><img src="/img/<!?= $shoes->img; ?>" width="200"></td>
+            <td><!?= $this->escapeHtml($shoes->price) ?></td>
+            <td><!?= $this->escapeHtml($shoes->name) ?></td>
+            <td><!?= $this->escapeHtml($shoes->reference) ?></td>
+            <td><!?= $this->escapeHtml($shoes->name_color) ?></td>
+            <td><!?= $this->escapeHtml($shoes->name_mark) ?></td>
+            <td><!?= $this->escapeHtml($shoes->name_shoes) ?></td>
+            <td><!?= $this->escapeHtml($shoes->name_category) ?></td>
+            <td>
+                <a href="<!?= $this->url('shoes', ['action' => 'edit', 'id' => $shoes->id]) ?>">Edit</a>
+                <a href="<!?= $this->url('shoes', ['action' => 'delete', 'id' => $shoes->id]) ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>*/

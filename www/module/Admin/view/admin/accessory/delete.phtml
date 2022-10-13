@@ -1,0 +1,23 @@
+<?php
+$title = 'Supprimer l\'accessoire';
+$url   = $this->url('accessory', ['action' => 'delete', 'id' => $id]);
+
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>
+   Vous êtes sûre de vouloir supprimer 
+ 
+    "<?= $this->escapeHtml($accessory->name) ?>" de couleur
+	"<?= $this->escapeHtml($accessory->name_color) ?>"
+</p>
+
+<form action="<?= $url ?>" method="post">
+    <div class="form-group">
+        <input type="hidden" name="id" value="<?= (int) $accessory->id ?>" />
+        <input type="submit" class="btn btn-danger" name="del" value="Yes" />
+        <input type="submit" class="btn btn-success" name="del" value="No" />
+    </div>
+	
+</form>

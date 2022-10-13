@@ -1,0 +1,56 @@
+<?php
+// module/book/view/book/book/edit.phtml:
+
+$title = 'Edit book';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+$book = $form->get('title');
+$book->setAttribute('class', 'form-control');
+$book->setAttribute('placeholder', 'Book title');
+
+$author = $form->get('author');
+$author->setAttribute('class', 'form-control');
+$author->setAttribute('placeholder', 'Author');
+
+
+$summary = $form->get('summary');
+$summary->setAttribute('class', 'form-control');
+$summary->setAttribute('placeholder', 'Summary');
+
+
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('book', [
+    'action' => 'edit',
+    'id'     => $id,
+]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<div class="form-group">
+    <?= $this->formLabel($book) ?>
+    <?= $this->formElement($book) ?>
+    <?= $this->formElementErrors()->render($book, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($author) ?>
+    <?= $this->formElement($author) ?>
+    <?= $this->formElementErrors()->render($author, ['class' => 'help-block']) ?>
+</div>
+<div class="form-group">
+    <?= $this->formLabel($summary) ?>
+    <?= $this->formElement($summary) ?>
+    <?= $this->formElementErrors()->render($summary, ['class' => 'help-block']) ?>
+</div>
+
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();

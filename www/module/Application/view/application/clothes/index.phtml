@@ -1,0 +1,16 @@
+<div class="grid-filter-wrap">
+	<ul class="grid-filter" data-container="#portfolio">
+		<li class="activeFilter"><a href=" #" data-filter="*">Voir tout</a></li>
+		<?php
+		foreach ($types as $type) {
+		?>
+			<li class=""><a href="#" data-filter=".pf-type<?= $type->id; ?>"><?= $type->type; ?></a></li>
+
+		<?php
+		}
+		?>
+
+	</ul><!-- .grid-filter end -->
+</div>
+<!-- class AJAX -->
+<div class="ajax-clothes pt-5 pb-5">

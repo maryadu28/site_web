@@ -1,0 +1,95 @@
+
+<div class="card my-4">
+	<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+	  <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+		<h6 class="text-white text-capitalize ps-3">ColorsTable</h6>
+	  </div>
+	</div>
+	<div class="card-body px-0 pb-2">
+	  <div class="table-responsive p-0">
+		  <p class="text-secondary opacity-7">
+             <a href="<?= $this->url('color', ['action' => 'add']) ?>">Ajouter une nouvelle couleur </a>
+         </p>
+		<table class="table align-items-center mb-0">
+		  <thead>
+			<tr>
+			  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Color</th>
+			  <th class="text-secondary opacity-5">Action</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<?php
+			foreach($colors as $color) {
+			  ?>
+				<tr>
+				  <td>
+					<div class="d-flex px-2 py-1">
+					 
+					  <div class="d-flex flex-column justify-content-center">
+						<h6 class="mb-0 text-sm"><?= $this->escapeHtml($color->color) ?></h6>
+						<p class="text-xs text-secondary mb-0"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="23494c4b4d6340514642574a55460e574a4e0d404c4e"> </a></p>
+					  </div>
+					</div>
+				  </td>
+				  
+				  <td class="align-middle">
+					<a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+					  <a href="<?= $this->url('color', ['action' => 'edit', 'id' => $color->id]) ?>">Edit</a>
+                      <a href="<?= $this->url('color', ['action' => 'delete', 'id' => $color->id]) ?>">Delete</a>
+					</a>
+				  </td>
+				</tr>
+			  	<?php
+			}
+			?>
+		  </tbody>
+		</table>
+	  </div>
+	</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+// module/book/view/book/book/index.phtml:
+
+/*$title = 'Ajouter une couleur';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('color', ['action' => 'add']) ?>">Ajouter une nouvelle couleur </a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Couleur</th>
+        <th>Action</th>
+    </tr>
+    <?php foreach ($colors as $color) : ?>
+        <tr>
+            <td><?= $this->escapeHtml($color->color) ?></td>
+
+            <td>
+                <a href="<?= $this->url('color', ['action' => 'edit', 'id' => $color->id]) ?>">Edit</a>
+                <a href="<?= $this->url('color', ['action' => 'delete', 'id' => $color->id]) ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+?>*/

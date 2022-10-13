@@ -1,0 +1,58 @@
+<?php
+// module/Album/view/book/book/add.phtml:
+$title = 'Add new book';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+// This provides a default CSS class and placeholder text for the title element:
+$book = $form->get('title');
+$book->setAttribute('class', 'form-control');
+$book->setAttribute('placeholder', 'book title');
+
+// This provides a default CSS class and placeholder text for the author element:
+$author = $form->get('author');
+$author->setAttribute('class', 'form-control');
+$author->setAttribute('placeholder', 'Author');
+
+$summary = $form->get('summary');
+$summary->setAttribute('class', 'form-control');
+$summary->setAttribute('placeholder', 'summary');
+
+// This provides CSS classes for the submit button:
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('book', ['action' => 'add']));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<?php // Wrap the elements in divs marked as form groups, and render the
+// label, element, and errors separately within 
+?>
+<div class="form-group">
+    <?= $this->formLabel($book) ?>
+    <?= $this->formElement($book) ?>
+    <?= $this->formElementErrors()->render($book, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($author) ?>
+    <?= $this->formElement($author) ?>
+    <?= $this->formElementErrors()->render($author, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($summary) ?>
+    <?= $this->formElement($summary) ?>
+    <?= $this->formElementErrors()->render($summary, ['class' => 'help-block']) ?>
+</div>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();
+
+
+?>

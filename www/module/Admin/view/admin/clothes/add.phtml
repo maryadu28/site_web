@@ -1,0 +1,251 @@
+<?php
+$type = $form->get('type');
+$type->setAttribute('class', 'form-control');
+$type->setAttribute('placeholder', 'Clothe Type');
+
+$color = $form->get('color');
+$color->setAttribute('class', 'form-control');
+$color->setAttribute('placeholder', 'Color');
+
+
+$fabric = $form->get('fabric');
+$fabric->setAttribute('class', 'form-control');
+$fabric->setAttribute('placeholder', 'Fabric');
+
+
+$size = $form->get('size');
+$size->setAttribute('class', 'form-control');
+$size->setAttribute('placeholder', 'Taille');
+
+$image = $form->get('img');
+$image->setAttribute('class', 'form-control');
+$image->setAttribute('placeholder', 'Image');
+
+$description = $form->get('description');
+$description->setAttribute('class', 'form-control');
+$description->setAttribute('placeholder', 'description');
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+
+$form->setAttribute('action', $this->url('clothes', ['action' => 'add']));
+
+$form->prepare();
+
+//d($form->getMessages());
+echo $this->form()->openTag($form);
+
+?>
+
+<main class="main-content  mt-0">
+    <div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
+        <span class="mask bg-gradient-dark opacity-6"></span>
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-4 col-md-8 col-12 mx-auto">
+                    <div class="card z-index-0 fadeIn3 fadeInBottom">
+                        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                            <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+                                <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Ajouter un nouvel vetement</h4>
+                                <div class="row mt-3">
+                                    <div class="col-2 text-center ms-auto">
+                                        <a class="btn btn-link px-3" href="javascript:;">
+                                            <i class="fa fa-facebook text-white text-lg"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-2 text-center px-1">
+                                        <a class="btn btn-link px-3" href="javascript:;">
+                                            <i class="fa fa-github text-white text-lg"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-2 text-center me-auto">
+                                        <a class="btn btn-link px-3" href="javascript:;">
+                                            <i class="fa fa-google text-white text-lg"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <!--form role="form" -->
+                            <!--label-->
+                            <?= $this->formLabel($type) ?>
+                            <div class="input-group input-group-outline my-3">
+                                <!--echo input-->
+                                <?= $this->formElement($type) ?>
+                                <!--afficher erreur -->
+                                <?= $this->formElementErrors()->render($type, ['class' => 'help-block']) ?>
+                            </div>
+
+                            <!--label-->
+                            <?= $this->formLabel($color) ?>
+                            <div class="input-group input-group-outline my-3">
+                                <!--echo input-->
+                                <?= $this->formElement($color) ?>
+                                <!--afficher erreur -->
+                                <?= $this->formElementErrors()->render($color, ['class' => 'help-block']) ?>
+                            </div>
+
+
+
+                            <!--label-->
+                            <?= $this->formLabel($size) ?>
+                            <div class="input-group input-group-outline my-3">
+                                <!--echo input-->
+                                <?= $this->formElement($size) ?>
+                                <!--afficher erreur -->
+                                <?= $this->formElementErrors()->render($size, ['class' => 'help-block']) ?>
+                            </div>
+
+
+                            <!--label-->
+                            <?= $this->formLabel($fabric) ?>
+                            <div class="input-group input-group-outline my-3">
+                                <!--echo input-->
+                                <?= $this->formElement($fabric) ?>
+                                <!--afficher erreur -->
+                                <?= $this->formElementErrors()->render($fabric, ['class' => 'help-block']) ?>
+                            </div>
+
+                            <!--label-->
+                            <?= $this->formLabel($image) ?>
+                            <div class="input-group input-group-outline my-3">
+                                <!--echo input-->
+                                <?= $this->formElement($image) ?>
+                                <!--afficher erreur -->
+                                <?= $this->formElementErrors()->render($image, ['class' => 'help-block']) ?>
+                            </div>
+
+                            <!--label-->
+                            <?= $this->formLabel($description) ?>
+                            <div class="input-group input-group-outline my-3">
+                                <!--echo input-->
+                                <?= $this->formElement($description) ?>
+                                <!--afficher erreur -->
+                                <?= $this->formElementErrors()->render($description, ['class' => 'help-block']) ?>
+                            </div>
+                            <?php
+                            echo $this->formSubmit($submit);
+                            echo $this->formHidden($form->get('id'));
+                            echo $this->form()->closeTag();
+                            ?>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+/*
+// module/Type/view/type/type/add.phtml:
+$title = 'Ajouter un nouveau vetement ' ;
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+// This provides a default CSS class and placeholder text for the title element:
+$type = $form->get('type');
+$type->setAttribute('class', 'form-control');
+$type->setAttribute('placeholder', 'Clothe type');
+
+// This provides a default CSS class and placeholder text for the artist element:
+$color = $form->get('color');
+$color->setAttribute('class', 'form-control');
+$color->setAttribute('placeholder', 'Color');
+
+// This provides a default CSS class and placeholder text for the artist element:
+$fabric = $form->get('fabric');
+$fabric->setAttribute('class', 'form-control');
+$fabric->setAttribute('placeholder', 'Fabric');
+
+// This provides a default CSS class and placeholder text for the artist element:
+$size = $form->get('size');
+$size->setAttribute('class', 'form-control');
+$size->setAttribute('placeholder', 'Size');
+// This provides CSS classes for the submit button:
+	// This provides a default CSS class and placeholder text for the artist element:
+
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('clothes', ['action' => 'add']));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<?php // Wrap the elements in divs marked as form groups, and render the
+// label, element, and errors separately within 
+?>
+<div class="form-group">
+    <?= $this->formLabel($type) ?>
+    <?= $this->formElement($type) ?>
+    <?= $this->formElementErrors()->render($type, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($color) ?>
+    <?= $this->formElement($color) ?>
+    <?= $this->formElementErrors()->render($color, ['class' => 'help-block']) ?>
+</div>
+<div class="form-group">
+    <?= $this->formLabel($fabric) ?>
+    <?= $this->formElement($fabric) ?>
+    <?= $this->formElementErrors()->render($fabric, ['class' => 'help-block']) ?>
+</div>
+<div class="form-group">
+    <?= $this->formLabel($size) ?>
+    <?= $this->formElement($size) ?>
+    <?= $this->formElementErrors()->render($size, ['class' => 'help-block']) ?>
+</div>
+
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();
+?>
+*/

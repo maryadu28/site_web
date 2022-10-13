@@ -1,0 +1,24 @@
+<div class="grid-filter-wrap">
+
+	<ul class="grid-filter" data-container="#portfolio">
+		<li class="activeFilter"><a href="#" data-filter="*">Tout voir</a></li>
+		<?php
+		foreach ($materials as $material) {
+		?>
+			<li class=""><a href="#" data-filter=".pf-material<?= $material->id; ?>"><?= $material->material; ?></a></li>
+		<?php
+		}
+		?>
+	</ul>
+
+</div>
+
+<button class="btn btn-success" type="button" id="loadMore"> Voir plus </button>
+
+<div id="compteur" style=" visibility :hidden">0</div>
+
+<!-- class AJAX -->
+
+<div class="ajax-accessory  pt-5 pb-5"></div>
+
+<!--end -->

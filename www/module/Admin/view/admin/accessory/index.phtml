@@ -1,0 +1,201 @@
+<div class="card my-4">
+	<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+		<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+			<h6 class="text-white text-capitalize ps-3">accessoriesTable</h6>
+		</div>
+	</div>
+	<div class="card-body px-0 pb-2">
+		<div class="table-responsive p-0">
+			<p class="text-secondary opacity-7">
+				<a href="<?= $this->url('accessory', ['action' => 'add']) ?>">Ajouter un nouvel accessoire </a>
+			</p>
+			<table class="table align-items-center mb-0">
+				<thead>
+					<tr>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Prix</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Réferences</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Couleur</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Marque</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Catégorie</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Matière</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
+						<th class="text-secondary opacity-5">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					foreach ($accessorys as $accessory) {
+					?>
+						<tr>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<img src="/img/<?= $accessory->img; ?>" width="200 !important" height="200" alt="user1">
+										</div>
+									</div>
+							</td>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($accessory->price) ?>
+										</div>
+									</div>
+							</td>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($accessory->name) ?>
+										</div>
+									</div>
+							</td>
+
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($accessory->reference) ?>
+										</div>
+									</div>
+							</td>
+							<td>
+								<div class="d-flex px-2 py-1">
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($accessory->name_color) ?>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($accessory->name_brand) ?>
+										</div>
+									</div>
+							</td>
+
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($accessory->name_category) ?>
+										</div>
+									</div>
+							</td>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($accessory->name_material) ?>
+										</div>
+									</div>
+							</td>
+
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($accessory->description) ?>
+										</div>
+									</div>
+							</td>
+
+
+							<td class="align-middle">
+								<a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+									<a href="<?= $this->url('accessory', ['action' => 'edit', 'id' => $accessory->id]) ?>">Edit</a>
+									<a href="<?= $this->url('accessory', ['action' => 'delete', 'id' => $accessory->id]) ?>">Delete</a>
+								</a>
+							</td>
+						</tr>
+					<?php
+					}
+					?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+/*
+
+$title = 'Mes accessoires ';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('accessory', ['action' => 'add']) ?>">Ajouter un nouvel accessoire </a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Image</th>
+        <th>Prix</th>
+        <th>Nom</th>
+        <th>Réferences</th>
+        <th>Couleur</th>
+        <th>Marque</th>
+        <th>Matière</th>
+        <th>Catégorie</th>
+        <th>Action</th>
+    </tr>
+
+    <?php foreach ($accessorys as $accessory) : ?>
+        <tr>
+            <td><img src="/img/<?= $accessory->img; ?>" width="200"></td>
+            <td><?= $this->escapeHtml($accessory->price) ?></td>
+            <td><?= $this->escapeHtml($accessory->name) ?></td>
+            <td><?= $this->escapeHtml($accessory->reference) ?></td>
+            <td><?= $this->escapeHtml($accessory->name_color) ?></td>
+            <td><?= $this->escapeHtml($accessory->name_brand) ?></td>
+            <td><?= $this->escapeHtml($accessory->name_accessory) ?></td>
+            <td><?= $this->escapeHtml($accessory->name_category) ?></td>
+            <td>
+                <a href="<?= $this->url('accessory', ['action' => 'edit', 'id' => $accessory->id]) ?>">Edit</a>
+                <a href="<?= $this->url('accessory', ['action' => 'delete', 'id' => $accessory->id]) ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>*/

@@ -1,0 +1,346 @@
+<?php
+$name = $form->get('name');
+$name->setAttribute('class', 'form-control');
+$name->setAttribute('placeholder', 'Nom');
+
+$price = $form->get('price');
+$price->setAttribute('class', 'form-control');
+$price->setAttribute('placeholder', 'Accessory price');
+
+$reference = $form->get('reference');
+$reference->setAttribute('class', 'form-control');
+$reference->setAttribute('placeholder', 'reference');
+
+$img = $form->get('img');
+$img->setAttribute('class', 'form-control');
+$img->setAttribute('placeholder', 'image');
+
+
+$brand = $form->get('id_brand');
+$brand->setAttribute('class', 'form-control');
+$brand->setAttribute('placeholder', 'Marque');
+
+
+
+$material = $form->get('id_material');
+$material->setAttribute('class', 'form-control');
+$material->setAttribute('placeholder', 'material');
+
+$color = $form->get('id_color');
+$color->setAttribute('class', 'form-control');
+$color->setAttribute('placeholder', 'Color');
+
+$category = $form->get('id_category');
+$category->setAttribute('class', 'form-control');
+$category->setAttribute('placeholder', 'category');
+
+$description = $form->get('description');
+$description->setAttribute('class', 'form-control');
+$description->setAttribute('placeholder', 'description');
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('accessory', [
+	'action' => 'edit',
+	'id'     => $id,
+]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+//echo $this->formHidden($form->get('id'));
+//echo $this->form()->closeTag();
+
+?>
+
+<main class="main-content  mt-0">
+	<div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
+		<span class="mask bg-gradient-dark opacity-6"></span>
+		<div class="container my-auto">
+			<div class="row">
+				<div class="col-lg-4 col-md-8 col-12 mx-auto">
+					<div class="card z-index-0 fadeIn3 fadeInBottom">
+						<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+							<div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+								<h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Editer un accessoire</h4>
+								<div class="row mt-3">
+									<div class="col-2 text-center ms-auto">
+										<a class="btn btn-link px-3" href="javascript:;">
+											<i class="fa fa-facebook text-white text-lg"></i>
+										</a>
+									</div>
+									<div class="col-2 text-center px-1">
+										<a class="btn btn-link px-3" href="javascript:;">
+											<i class="fa fa-github text-white text-lg"></i>
+										</a>
+									</div>
+									<div class="col-2 text-center me-auto">
+										<a class="btn btn-link px-3" href="javascript:;">
+											<i class="fa fa-google text-white text-lg"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="card-body">
+
+							<form role="form">
+								<!--label-->
+								<?= $this->formLabel($price) ?>
+								<div class="input-group input-group-outline my-3">
+									<!--echo input-->
+									<?= $this->formElement($price) ?>
+									<!--afficher erreur -->
+									<?= $this->formElementErrors()->render($price, ['class' => 'help-block']) ?>
+
+								</div>
+
+								<!--label-->
+								<?= $this->formLabel($name) ?>
+								<div class="input-group input-group-outline my-3">
+									<!--echo input-->
+									<?= $this->formElement($name) ?>
+
+									<!--afficher erreur -->
+									<!--afficher erreur -->
+									<?= $this->formElementErrors()->render($name, ['class' => 'help-block']) ?>
+								</div>
+								<!--label-->
+								<?= $this->formLabel($color) ?>
+								<div class="input-group input-group-outline my-3">
+									<!--echo input-->
+									<?= $this->formElement($color) ?>
+									<!--afficher erreur -->
+									<?= $this->formElementErrors()->render($color, ['class' => 'help-block']) ?>
+								</div>
+
+								<!--label-->
+								<?= $this->formLabel($category) ?>
+								<div class="input-group input-group-outline my-3">
+									<!--echo input-->
+									<?= $this->formElement($category) ?>
+									<!--afficher erreur -->
+									<?= $this->formElementErrors()->render($category, ['class' => 'help-block']) ?>
+								</div>
+								<!--label-->
+
+								<?= $this->formLabel($material) ?>
+								<div class="input-group input-group-outline my-3">
+									<!--echo input-->
+									<?= $this->formElement($material) ?>
+									<!--afficher erreur -->
+									<?= $this->formElementErrors()->render($material, ['class' => 'help-block']) ?>
+								</div>
+
+
+								<!--label-->
+								<?= $this->formLabel($reference) ?>
+								<div class="input-group input-group-outline my-3">
+									<!--echo input-->
+									<?= $this->formElement($reference) ?>
+									<!--afficher erreur -->
+									<?= $this->formElementErrors()->render($reference, ['class' => 'help-block']) ?>
+								</div>
+
+								<!--label-->
+								<?= $this->formLabel($brand) ?>
+								<div class="input-group input-group-outline my-3">
+									<!--echo input-->
+									<?= $this->formElement($brand) ?>
+									<!--afficher erreur -->
+									<?= $this->formElementErrors()->render($brand, ['class' => 'help-block']) ?>
+								</div>
+
+
+								<!--label-->
+								<?= $this->formLabel($img) ?>
+								<div class="input-group input-group-outline my-3">
+									<!--echo input-->
+									<?= $this->formElement($img) ?>
+									<!--afficher erreur -->
+									<?= $this->formElementErrors()->render($img, ['class' => 'help-block']) ?>
+								</div>
+
+								<!--label-->
+
+								<?= $this->formLabel($description) ?>
+								<div class="input-group input-group-outline my-3">
+									<!--echo input-->
+									<?= $this->formElement($description) ?>
+									<!--afficher erreur -->
+									<?= $this->formElementErrors()->render($description, ['class' => 'help-block']) ?>
+								</div>
+								<?php
+								echo $this->formSubmit($submit);
+								echo $this->formHidden($form->get('id'));
+								echo $this->form()->closeTag();
+								?>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<!--   Core JS Files   -->
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap.min.js"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+<script>
+	var win = navigator.platform.indexOf('Win') > -1;
+	if (win && document.querySelector('#sidenav-scrollbar')) {
+		var options = {
+			damping: '0.5'
+		}
+		Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+	}
+</script>
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- Control Center for material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="../assets/js/material-dashboard.min.js?v=3.0.1"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+// module/clothie/view/clothie/clothie/edit.phtml:
+	/*
+
+$title = 'Editer un accessoire ';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+$price = $form->get('price');
+$price->setAttribute('class', 'form-control');
+$price->setAttribute('placeholder', 'Accessory price');
+
+$color = $form->get('id_color');
+$color->setAttribute('class', 'form-control');
+$color->setAttribute('placeholder', 'Color');
+
+
+$category = $form->get('id_category');
+$category->setAttribute('class', 'form-control');
+$category->setAttribute('placeholder', 'category');
+	
+$reference = $form->get('reference');
+$reference->setAttribute('class', 'form-control');
+$reference->setAttribute('placeholder', 'category');
+
+
+$name = $form->get('name');
+$name->setAttribute('class', 'form-control');
+$name->setAttribute('placeholder', 'Nom');
+
+
+$brand = $form->get('id_brand');
+$brand->setAttribute('class', 'form-control');
+$brand->setAttribute('placeholder', 'Marque');
+
+
+$material = $form->get('id_material');
+$material->setAttribute('class', 'form-control');
+$material->setAttribute('placeholder', 'material');
+
+$img = $form->get('img');
+$img->setAttribute('class', 'form-control');
+$img->setAttribute('placeholder', 'image');
+
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('accessory', [
+    'action' => 'edit',
+    'id'     => $id,
+]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+
+?>
+
+<div class="form-group">
+    <?= $this->formLabel($material) ?>
+    <?= $this->formElement($material) ?>
+    <?= $this->formElementErrors()->render($material, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($color) ?>
+    <?= $this->formElement($color) ?>
+    <?= $this->formElementErrors()->render($color, ['class' => 'help-block']) ?>
+</div>
+<div class="form-group">
+    <?= $this->formLabel($category) ?>
+    <?= $this->formElement($category) ?>
+    <?= $this->formElementErrors()->render($category, ['class' => 'help-block']) ?>
+</div>
+<div class="form-group">
+    <?= $this->formLabel($name) ?>
+    <?= $this->formElement($name) ?>
+    <?= $this->formElementErrors()->render($name, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($reference) ?>
+    <?= $this->formElement($reference) ?>
+    <?= $this->formElementErrors()->render($reference, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($price) ?>
+    <?= $this->formElement($price) ?>
+    <?= $this->formElementErrors()->render($price, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($brand) ?>
+    <?= $this->formElement($brand) ?>
+    <?= $this->formElementErrors()->render($brand, ['class' => 'help-block']) ?>
+</div>
+<div class="form-group">
+    <?= $this->formLabel($img) ?>
+    <?= $this->formElement($img) ?>
+    <?= $this->formElementErrors()->render($img, ['class' => 'help-block']) ?>
+</div>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();
+*/

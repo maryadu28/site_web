@@ -1,0 +1,132 @@
+<div class="card my-4">
+	<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+		<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+			<h6 class="text-white text-capitalize ps-3">clothesTable</h6>
+		</div>
+	</div>
+	<div class="card-body px-0 pb-2">
+		<div class="table-responsive p-0">
+			<p class="text-secondary opacity-7">
+				<a href="<?= $this->url('clothes', ['action' => 'add']) ?>">Ajouter un nouveau vêtement </a>
+			</p>
+			<table class="table align-items-center mb-0">
+				<thead>
+					<tr>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">image</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">COULEUR</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tissu</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Taille</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
+						<th class="text-secondary opacity-5">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					foreach ($clothes as $clothes) {
+					?>
+						<tr>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<img src="/img/<?= $clothes->img; ?>" class="text-xs font-weight-bold mb-0" style="width: 200px!important; height: 200px!important">
+									</div>
+							</td>
+
+
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($clothes->name_type) ?>
+										</div>
+									</div>
+							</td>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($clothes->name_color) ?>
+										</div>
+									</div>
+							</td>
+
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($clothes->name_fabric) ?>
+										</div>
+									</div>
+							</td>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($clothes->name_size) ?>
+										</div>
+									</div>
+							</td>
+							<td>
+								<div class="d-flex px-2 py-1">
+
+									<div class="d-flex flex-column justify-content-center">
+										<div>
+											<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($clothes->description) ?>
+										</div>
+									</div>
+							</td>
+							<td class="align-middle">
+								<a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+									<a href="<?= $this->url('clothes', ['action' => 'edit', 'id' => $clothes->id]) ?>">Edit</a>
+									<a href="<?= $this->url('clothes', ['action' => 'delete', 'id' => $clothes->id]) ?>">Delete</a>
+								</a>
+							</td>
+
+						<?php
+					}
+						?>
+						</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<?php
+
+// module/Clothes/view/clothes/clothes/index.phtml:
+/*
+$title = 'Mes types de vêtement';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('clothes', ['action' => 'add']) ?>">Add new piece of clothes</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Type</th>
+    <th>Color</th>
+    <th>Fabric</th>
+    <th>Size</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($clothes as $clothes) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($clothes->name_type) ?></td>
+        <td><?= $this->escapeHtml($clothes->name_color) ?></td>
+        <td><?= $this->escapeHtml($clothes->name_fabric) ?></td>
+        <td><?= $this->escapeHtml($clothes->name_size) ?></td>
+        <td>
+            <a href="<?= $this->url('clothes', ['action' => 'edit', 'id' => $clothes->id]) ?>">Edit</a>
+            <a href="<?= $this->url('clothes', ['action' => 'delete', 'id' => $clothes->id]) ?>">Delete</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</table>
+*/

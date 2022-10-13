@@ -1,0 +1,423 @@
+<?php
+
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+?>
+<?= $this->doctype() ?>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="/css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<!-- SLIDER REVOLUTION 5.x CSS SETTINGS 
+	<link rel="stylesheet" type="text/css" href="/asset/include/rs-plugin/css/settings.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/asset/include/rs-plugin/css/layers.css">
+	<link rel="stylesheet" type="text/css" href="/asset/include/rs-plugin/css/navigation.css">
+-->
+
+<!-- Document Title=============================================-->
+<link rel="shortcut icon" type="image/png" href="/images/star.png">
+<title>
+	Boutique femme
+</title>
+
+<body class="stretched">
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Top Bar
+		============================================= -->
+		<!--div id="top-bar">
+			< class="z-navicat-header-uspBar">
+				<div class="mrHm0Z C3wGFf">
+					<div class="NSqNvp _0xLoFW _7ckuOK mROyo1">
+						<div class="kpgVnb _2hG8pA">
+							<div class="z-navicat-header-uspBar_wrapper">
+								<div class="z-navicat-header-uspBar_messages">
+									<div class="z-navicat-header-uspBar_message">
+										<span tabindex="0" class="z-navicat-header-uspBar_message-split_styled"><a href="#" style="text-decoration:none;color:#666">Essayez d’abord, <font color="#FF6900">payez après</font></a></span>
+										<span class="z-navicat-header-uspBar_message-split_styled" tabindex="0">
+											Livraison et retour
+											<span class="zText">
+												<font color="#FF6900">gratuits*</font>
+											</span>
+										</span>
+										<span class="z-navicat-header-uspBar_message-split_styled" tabindex="0" title="Vous avez 100 jours pour faire votre choix et nous renvoyer gratuitement les articles non portés.">
+											<span class="zText">
+												Retour et<font color="#FF6900"> remboursement</font>
+											</span>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- #top-bar end -->
+
+		<!-- Header
+		============================================= -->
+		<header id=" header" class="full-header">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row">
+						<!-- Logo
+						============================================= -->
+						<div id="logo">
+							<a href="/" class="standard-logo" data-dark-logo="/images/logo-dark.png"><img src="/images/logo.png"></a>
+							<a href="/" class="retina-logo" data-dark-logo="/images/logo-dark@2x.png"><img src="/images/logo.png"></a>
+						</div><!-- #logo end -->
+						<div class="header-misc">
+							<!-- Top Search
+							============================================= -->
+							<div id="top-search" class="header-misc-icon">
+
+								<a href="#" id="top-search-trigger">
+									<i class="icon-line-search"></i>
+									<i class="icon-line-cross"></i>
+
+								</a>
+							</div><!-- #top-search end -->
+
+							<!-- Top Cart
+							============================================= -->
+							<div id="top-cart" class="header-misc-icon d-none d-sm-block">
+								<a href="#" id="top-cart-trigger"><i class="icon-line-bag"></i><span class="top-cart-number"></span></a>
+								<div class="top-cart-content">
+									<div class="top-cart-title">
+										<h4>Panier</h4>
+									</div>
+								</div>
+							</div><!-- #top-cart end -->
+
+						</div>
+						<!--fin_header-misc-->
+
+						<!-- Primary Navigation
+		 ============================================= -->
+						<nav class="primary-menu">
+							<ul class="menu-container">
+
+								<li class="menu-item">
+
+									<a class="menu-link" href="<?= $this->url('home') ?>">
+										<div>Acceuil</div>
+									</a>
+								</li>
+
+								<li class="menu-item">
+									<a class="menu-link" href="<?= $this->url('user_accessory') ?>">
+										<div>Accessoires </div>
+									</a>
+								</li>
+								<li class="menu-item">
+									<a class="menu-link" href="<?= $this->url('user_clothes') ?>">
+										<div>Vêtements </div>
+									</a>
+								</li>
+								<li class="menu-item">
+									<a class="menu-link" href="<?= $this->url('user_shoes') ?>">
+										<div>Chaussures </div>
+									</a>
+								</li>
+								<li class="menu-item">
+									<a class="menu-link" href="<?= $this->url('admin') ?>">
+										<div>Se connecter</div>
+									</a>
+								</li>
+								<!--li class="menu-item">
+									<a class="menu-link" href="<?= $this->url('log') ?>">
+										<div>Se Connecter </div>
+									</a>
+								</li-->
+
+							</ul>
+
+						</nav> <!-- #primary-menu end -->
+						<!-- style .css  -->
+						<form class="top-search-form" action=" " method="get">
+
+							<input type="text">
+						</form>
+						<div class="header-wrap-clone"></div>
+		</header> <!-- #header end -->
+		<!-- Page Sub Menu--Responsive !!!
+		============================================= -->
+		<div id="page-menu" class="no-sticky">
+			<div id="page-menu-wrap">
+				<div class="container">
+					<div class="page-menu-row">
+
+						<div class="page-menu-title">Bienvenue sur <span>mimiShop</span></div>
+
+						<nav class="page-menu-nav">
+							<ul class="page-menu-container">
+								<li class="page-menu-item current">
+									<a class="menu-link" href="<?= $this->url('home') ?>">
+										<div>Acceuil</div>
+									</a>
+								</li>
+								<li class="page-menu-item"><a href="portfolio-3-nomargin.html">
+										<a class="menu-link" href="<?= $this->url('user_accessory') ?>">
+											<div>Accessoires </div>
+										</a>
+								</li>
+								<li class="page-menu-item"><a href="portfolio-3-notitle.html">
+										<a class="menu-link" href="<?= $this->url('user_clothes') ?>">
+											<div>Vêtements </div>
+										</a>
+								</li>
+								<li class="page-menu-item"><a href="">
+										<a class="menu-link" href="<?= $this->url('user_shoes') ?>">
+											<div>Chaussures </div>
+										</a>
+								</li>
+								
+
+							</ul>
+						</nav>
+
+						<div id="page-menu-trigger"><i class="icon-reorder"></i></div>
+
+					</div>
+				</div>
+			</div>
+		</div><!-- #page-menu end -->
+
+		<!-- Page Title
+		============================================= -->
+
+
+
+
+		<!-- Content
+		============================================= -->
+		<section id="page-title">
+			<span> </span>
+		</section><!-- #content end -->
+		<div class style="padding-left:25px;">
+			<?= $this->content ?>
+		</div>
+
+	</div>
+	<!-- Footer
+		 ============================================== -->
+
+	<footer id="footer" class="dark">
+		<div class="container">
+			<!-- Footer Widgets
+				============================================= -->
+			<div class="footer-widgets-wrap">
+
+				<div class="row col-mb-50">
+					<div class="col-lg-8">
+
+						<div class="row col-mb-50">
+							<div class="col-md-4">
+
+								<div class="widget clearfix">
+									<a class="standard-logo tada animated" data-animate="tada" data-dark-logo="/images/LOGO_FOOTER.png">
+
+										<img src="/images/LOGO_FOOTER.png" alt="Image" class="footer-logo">
+									</a>
+									<p>
+										Découvrez la Ligne Ultime de Prêt-à-Porter, Chaussures et Accessoires.le <strong>luxe</strong> comtemporin.
+										<strong>Influente</strong><strong> Progressive</strong>,<strong> Innovante</strong>
+										Découvrez les dernières collections.
+									</p>
+
+									<div style="background: url('/images/world-map.png') no-repeat center center; background-size: 100%;">
+										<address>
+											<strong>siege social :</strong><br>
+											8 Rue du Dr Maunoury,<br>
+											28000 Chartres<br>
+										</address>
+										<abbr title="Phone Number"><strong>Tel:</strong></abbr>02 35 77 58 55 <br>
+										<abbr title="Fax"><strong>Fax:</strong></abbr> 02 35 36 25 25 <br>
+										<abbr title="Email Address"><strong>Email:</strong></abbr> info@mimishop.com
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="col-md-4">
+
+								<div class="widget widget_links clearfix">
+
+									<h4>Aide</h4>
+
+									<ul>
+										<li><a href="https://codex.wordpress.org/">FAQ & service client</a></li>
+										<li><a href="https://wordpress.org/support/forum/requests-and-feedback">Mon compte</a></li>
+										<li><a href="https://wordpress.org/extend/plugins/">Programme de fidélité</a></li>
+										<li><a href="https://wordpress.org/support/">Suivre ma commande</a></li>
+										<li><a href="https://wordpress.org/extend/themes/">Morphologie </a></li>
+
+									</ul>
+
+								</div>
+
+							</div>
+
+							<div class="col-md-4">
+
+								<div class="widget clearfix">
+									<h4>mimiShop</h4>
+
+									<div class="posts-sm row col-mb-30" id="post-list-footer">
+										<div class="entry col-12">
+											<div class="grid-inner row">
+												<div class="col">
+													<div class="entry-title">
+														<h4><a href="#">La marque</a></h4>
+
+													</div>
+
+												</div>
+											</div>
+										</div>
+										<div class="entry col-12">
+											<div class="grid-inner row">
+												<div class="col">
+													<div class="entry-title">
+														<h4><a href="#">Engagements</a></h4>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="entry col-12">
+											<div class="grid-inner row">
+												<div class="col">
+													<div class="entry-title">
+														<h4><a href="#">Communauté</a></h4>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="entry col-12">
+											<div class="grid-inner row">
+												<div class="col">
+													<div class="entry-title">
+														<h4><a href="#">Recrutement</a></h4>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+
+					<div class="col-lg-4">
+
+						<div class="row col-mb-50">
+							<div class="col-md-4 col-lg-12">
+								<div class="widget clearfix" style="margin-bottom: -20px;">
+
+									<div class="row">
+										<div class="col-lg-6 bottommargin-sm">
+											<div class="counter counter-small"><span data-from="50" data-to="15065421" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
+											<h5 class="mb-0">CLIENTS INSCRTIS</h5>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="col-md-5 col-lg-12">
+								<div class="widget subscribe-widget clearfix">
+									<h5><strong>Abonnez-vous</strong> à notre newsletter pour recevoir des offres incroyables et des exclusivités:</h5>
+									<div class="widget-subscribe-form-result"></div>
+									<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
+										<div class="input-group mx-auto">
+											<div class="input-group-text"><i class="icon-email2"></i></div>
+											<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
+											<button class="btn btn-success" type="submit">Subscribe</button>
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-lg-12">
+								<div class="widget clearfix" style="margin-bottom: -20px;">
+
+									<div class="row">
+										<div class="col-6 col-md-12 col-lg-6 clearfix bottommargin-sm">
+											<a href="#" class="social-icon si-dark si-colored si-facebook mb-0" style="margin-right: 10px;">
+												<i class="icon-facebook"></i>
+												<i class="icon-facebook"></i>
+											</a>
+											<a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+										</div>
+										<div class="col-6 col-md-12 col-lg-6 clearfix">
+											<a href="#" class="social-icon si-dark si-colored si-rss mb-0" style="margin-right: 10px;">
+												<i class="icon-rss"></i>
+												<i class="icon-rss"></i>
+											</a>
+											<a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div><!-- .footer-widgets-wrap end -->
+
+		</div>
+		<!-- Copyrights
+					============================================= -->
+		<div id="copyrights">
+			<div class="container">
+
+				<div class="row col-mb-30">
+
+					<div class="col-md-6 text-center text-md-start">
+						Copyrights &copy;Amira2022.<br>
+
+					</div>
+				</div>
+			</div>
+		</div><!-- #copyrights end -->
+	</footer> <!-- #footer end -->
+	</div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="/js/jquery.js"></script>
+	<script src="/js/plugins.min.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="/js/functions.js"></script>
+	<script src="/js/custom.js"></script>
+
+
+</body>
+
+</html>

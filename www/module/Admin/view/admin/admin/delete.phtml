@@ -1,0 +1,22 @@
+<?php
+$title = 'Supprimer un admin';
+$url   = $this->url('admin', ['action' => 'delete', 'id' => $id]);
+
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>
+    Vous êtes sûre de vouloir supprimer
+
+    "<?= $this->escapeHtml($adminss->name) ?>"
+</p>
+
+<form action="<?= $url ?>" method="post">
+    <div class="form-group">
+        <input type="hidden" name="id" value="<?= (int) $adminss->id ?>" />
+        <input type="submit" class="btn btn-danger" name="del" value="Yes" />
+        <input type="submit" class="btn btn-success" name="del" value="No" />
+    </div>
+
+</form>

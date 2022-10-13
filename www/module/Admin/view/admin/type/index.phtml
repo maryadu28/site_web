@@ -1,0 +1,96 @@
+ 
+<div class="card my-4">
+	<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+	  <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+		<h6 class="text-white text-capitalize ps-3">TypesTable</h6>
+	  </div>
+	</div>
+	<div class="card-body px-0 pb-2">
+	  <div class="table-responsive p-0">
+		  <p class="text-secondary opacity-7">
+             <a href="<?= $this->url('type', ['action' => 'add']) ?>">Ajouter un nouveau type </a>
+         </p>
+		<table class="table align-items-center mb-0">
+		  <thead>
+			<tr>
+			  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">type</th>
+			  <th class="text-secondary opacity-5">Action</th>
+			</tr>
+		  </thead>
+		
+		  <tbody>
+			<?php
+			foreach ($types as $type)  {
+			  ?>
+				<tr>
+				  <td>
+					<div class="d-flex px-2 py-1">
+					 
+					  <div class="d-flex flex-column justify-content-center">
+						<h6 class="mb-0 text-sm"><?=$this->escapeHtml($type->type) ?></h6>
+						
+					  </div>
+					</div>
+				  </td>
+				  
+				  <td class="align-middle">
+					<a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+					  <a href="<?= $this->url('type', ['action' => 'edit', 'id' => $type->id]) ?>">Edit</a>
+                      <a href="<?= $this->url('type', ['action' => 'delete', 'id' => $type->id]) ?>">Delete</a>
+					</a>
+				  </td>
+				</tr>
+			  	<?php
+			}
+			?>
+		  </tbody>
+		</table>
+	  </div>
+	</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+/*
+
+$title = 'Le type  de vêtement  ';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('type', ['action' => 'add']) ?>">Ajouter ufjejejjejejfn nouveau type </a>
+</p>
+
+<table class="table">
+    <tr>
+
+        <th>Type</th>
+        <th>Action</th>
+
+
+    </tr>
+    <?php foreach ($types as $type) : ?>
+        <tr>
+            <td><?= $this->escapeHtml($type->type) ?></td>
+            <td>
+                <a href="<?= $this->url('type', ['action' => 'edit', 'id' => $type->id]) ?>">Edit</a>
+                <a href="<?= $this->url('type', ['action' => 'delete', 'id' => $type->id]) ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>*/

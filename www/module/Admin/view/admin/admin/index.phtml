@@ -1,0 +1,88 @@
+<div class="card my-4">
+	<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+		<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+			<h6 class="text-white text-capitalize ps-3">Les admin de GSV</h6>
+		</div>
+	</div>
+	<div class="card-body px-0 pb-2">
+		<div class="table-responsive p-0">
+			<p class="text-secondary opacity-7">
+				<a href="<?= $this->url('admin', ['action' => 'add']) ?>">Ajouter un nouveau admin </a>
+			</p>
+			<table class="table align-items-center mb-0">
+				<thead>
+					<tr>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Noms</th>
+						<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Groupe</th>
+						<th class="text-secondary opacity-5">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					foreach ($admins as $admin) {
+					?>
+						<tr>
+							<td>
+								<div class="d-flex px-2 py-1">
+									<div>
+										<img src="/img/<?= $admin->img; ?>" class="avatar avatar-sm me-3 border-radius-lg" style="width: 150px!important; height: 150px!important " alt="user1">
+									</div>
+									<div class="d-flex flex-column justify-content-center">
+										<h6 class="mb-0 text-sm"><?= $this->escapeHtml($admin->name) ?></h6>
+										<p class="text-xs text-secondary mb-0"><?= $this->escapeHtml($admin->email) ?></p>
+									</div>
+								</div>
+							</td>
+							<td>
+								<p class="text-xs font-weight-bold mb-0"><?= $this->escapeHtml($admin->name_group) ?></p>
+
+							</td>
+
+
+							<td class="align-middle">
+								<a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+									<a href="<?= $this->url('admin', ['action' => 'edit', 'id' => $admin->id]) ?>"><i class="nav-icon fas fa-edit"></i></a>
+									<a href="<?= $this->url('admin', ['action' => 'delete', 'id' => $admin->id]) ?>"><i class="nav-icon fas fa-trash"></i></a>
+								</a>
+							</td>
+						</tr>
+					<?php
+					}
+					?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<?php
+/*
+// module/book/view/book/book/index.phtml:
+$title = 'Mes admin!!';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('admin', ['action' => 'add']) ?>">Ajouter un admin </a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Avatar</th>
+        <th>Nom</th>
+        <th>Groupe</th>
+        <th>Action</th>
+
+    </tr>
+    <?php foreach ($admins as $admin) : ?>
+        <tr>
+            <td><img src="/img/<?= $admin->img; ?>" width="200" height="200" style="border-radius:25px"></td>
+            <td style="color:red"><?= $this->escapeHtml($admin->name) ?> </td>
+            <td><?= $this->escapeHtml($admin->name_group) ?></td>
+            <td>
+                <a href="<?= $this->url('admin', ['action' => 'edit', 'id' => $admin->id]) ?>">Edit</a>
+                <a href="<?= $this->url('admin', ['action' => 'delete', 'id' => $admin->id]) ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+*/
